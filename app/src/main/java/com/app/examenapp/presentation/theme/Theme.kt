@@ -1,6 +1,5 @@
-package com.app.examenapp.ui.theme
+package com.app.examenapp.presentation.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
