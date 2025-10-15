@@ -18,6 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.app.examenapp.presentation.screens.home.components.CountryListContent
+import com.app.examenapp.presentation.screens.home.components.InfoProject
 import com.app.examenapp.presentation.screens.home.components.SearchTab
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -28,7 +29,7 @@ fun HomeScreen(
     viewModel: HomeViewModel = hiltViewModel(),
 ) {
     var selectedTabIndex by remember { mutableStateOf(0) }
-    val tabs = listOf("Countries List", "Search")
+    val tabs = listOf("Countries List", "Search", "Info")
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
 
     Scaffold(
@@ -64,6 +65,7 @@ fun HomeScreen(
                         onRetry = { viewModel.loadCountryList() }, // Parámetro agregado
                     )
                 1 -> SearchTab(onCountryClick = onCountryClick)
+                2 -> InfoProject(onCountryClick=onCountryClick)
             }
         }
     }

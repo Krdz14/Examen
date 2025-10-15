@@ -28,6 +28,12 @@ fun CountryDetailContent(country: Country) {
                 .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
+        AsyncImage(
+            model = country.flagUrl,
+            contentDescription = country.name,
+            modifier = Modifier.size(200.dp),
+        )
+
         Spacer(modifier = Modifier.height(16.dp))
 
         Text(

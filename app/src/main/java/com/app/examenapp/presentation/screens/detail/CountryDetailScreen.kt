@@ -21,6 +21,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.app.examenapp.presentation.common.components.ErrorView
+import com.app.examenapp.presentation.common.components.LoadingShimmer
+import com.app.examenapp.presentation.screens.detail.components.CountryDetailContent
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Suppress("ktlint:standard:function-naming")
@@ -38,7 +41,7 @@ fun CountryDetailScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Detalles del Pokémon") },
+                title = { Text("Detalles del País") },
                 navigationIcon = {
                     IconButton(onClick = onBackClick) {
                         Icon(Icons.Default.ArrowBack, "Back")
@@ -70,7 +73,7 @@ fun CountryDetailScreen(
                     )
                 }
                 uiState.country != null -> {
-                    CountryDetailScreen(
+                    CountryDetailContent(
                         country = uiState.country!!,
                     )
                 }
