@@ -7,15 +7,14 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface CountriesApi {
-    @GET("all?/fields=name")
+    @GET("v3.1/all")
     suspend fun getCountriesList(
-        @Query("limit") limit: Int = 20,
-        @Query("offset") offset: Int = 0,
-    ): CountryListDto
+        @Query("fields") fields: String = "name,flags"
+    ): List<CountryListDto>
 
-    @GET("name/{id}")
+    @GET("v3.1/name/{name}")
     suspend fun getCountry(
         @Path("name") name: String,
-    ): CountryDto
-
+        @Query("fullText") fullText: Boolean = true
+    ): List<CountryDto>
 }

@@ -64,6 +64,15 @@ fun CountryCard(
             modifier = Modifier.padding(8.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
+            AsyncImage(
+                model = country.flagUrl,
+                contentDescription = country.name,
+                modifier =
+                    Modifier
+                        .size(120.dp)
+                        .padding(8.dp),
+                contentScale = ContentScale.Fit,
+            )
             Text(
                 text = country.name,
                 style = MaterialTheme.typography.titleMedium,

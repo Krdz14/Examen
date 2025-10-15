@@ -57,7 +57,7 @@ fun SearchTab(
                 searchQuery = it
             },
             modifier = Modifier.fillMaxWidth(),
-            label = { Text("Search Pokémon") },
+            label = { Text("Search Country") },
             leadingIcon = {
                 Icon(Icons.Default.Search, contentDescription = null)
             },
@@ -99,7 +99,7 @@ fun SearchTab(
                         )
                         Spacer(modifier = Modifier.height(8.dp))
                         Text(
-                            text = "Search by name or number",
+                            text = "Search by name",
                             style = MaterialTheme.typography.bodyLarge,
                             textAlign = TextAlign.Center,
                         )
@@ -123,7 +123,7 @@ fun SearchTab(
                         )
                         Spacer(modifier = Modifier.height(8.dp))
                         Text(
-                            text = "No Pokémon found",
+                            text = "No Country Found",
                             style = MaterialTheme.typography.bodyLarge,
                             textAlign = TextAlign.Center,
                         )
